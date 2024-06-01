@@ -5,17 +5,11 @@
 <p>The present work presents the development of a website for Japanese food restaurants, named "SushiFusion," with the purpose of providing a unique experience for both customers and the internal management of the establishment. The project integrates functionalities, including an interactive review space for customers to share their experiences and photos of the dishes, contributing to the creation of an engaging community around the restaurant. Additionally, SushiFusion simplifies menu management, allowing employees to easily add new dishes through an intuitive interface, ensuring that the online menu is always up to date. With this work, the aim is to redefine how restaurants interact with their customers and manage their operations, making the process more efficient and engaging for everyone involved.</p>
 <h2>(˵ •̀ ᴗ - ˵ ) ✧Project Concept on Canva</h2>
 <p>I created the entire website layout in Canva.</p>
-<img src="Imagens/lightmode.png">
-<img src="Imagens/darkmode.png">
-<img src="Imagens/3.png">
-<img src="Imagens/4.png">
+<img src="Imagens/pagina-inicial.png">
+<img src="Images/cardapio.png">
+<img src="Images/review.png">
+<img src="Imagens/login-cadastro.png">
 <h2>ฅ՞•ﻌ•՞ฅ Features</h2>
-<p>I have created some features for the website. Using JavaScript, I have created the functionality of Light Mode and Dark Mode, as well as the functionality of drawing random numbers.</p>
+<p>I have created some features for the website: a login and registration system for new users (with role identification), menu editing (employees can add, edit, or remove items from the menu), and review creation (customers can write and edit reviews - they are unique per registration). .</p>
 <h2>/ᐠ - ˕ -マ How to access the project</h2>
-<a href="https://maridamaso.github.io/lucky_paws/">Click here to access</a>
-<h2>(◍•ᴗ•◍)♡ ✧* Image Credits</h2>
-<p>Special thanks to Flaticon and Freepik who have excellent free images for use in study projects like this one.</p>
-<a href="https://br.freepik.com/vetores-gratis/ilustracao-do-conceito-de-gato-da-sorte_35874181.htm#query=lucky%20cat%20png&position=3&from_view=search&track=ais">Imagem de storyset</a> no Freepik <br>
-<a href="https://www.flaticon.com/br/icones-gratis/meia-lua" title="meia-lua ícones">Meia-lua ícones criados por Bharat Icons - Flaticon</a> <br>
-<a href="https://www.flaticon.com/br/icones-gratis/clima" title="clima ícones">Clima ícones criados por Freepik - Flaticon</a> <br>
-<a href="https://www.flaticon.com/br/icon-font-gratis/menu-hamburguer_3917762?related_id=3917762" title="fi-br-menu-burger">Menu-hambúrguer free interface icon - Flaticon </a> 
+<a href="">Click here to access</a>
