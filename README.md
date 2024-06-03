@@ -5,7 +5,7 @@
 <p>The present work presents the development of a website for Japanese food restaurants, named "SushiFusion," with the purpose of providing a unique experience for both customers and the internal management of the establishment. The project integrates functionalities, including an interactive review space for customers to share their experiences and photos of the dishes, contributing to the creation of an engaging community around the restaurant. Additionally, SushiFusion simplifies menu management, allowing employees to easily add new dishes through an intuitive interface, ensuring that the online menu is always up to date. With this work, the aim is to redefine how restaurants interact with their customers and manage their operations, making the process more efficient and engaging for everyone involved.</p>
 <h2>(˵ •̀ ᴗ - ˵ ) ✧Project Concept on Canva</h2>
 <p>I created the entire website layout in Canva.</p>
-<img src="Images/pagina-inicial.png">
+<img src="Restaurante/front-end/Images/pagina-inicial.png">
 <img src="Images/cardapio.png">
 <img src="Images/review.png">
 <img src="Images/login-cadastro.png">
