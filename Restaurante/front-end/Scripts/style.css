@@ -1,0 +1,786 @@
+/* Resetando informações pre-definias*/
+body{
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    background-color: #000000;
+    color: #FFFFFF;
+}
+/* Estilos para o cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #000000; /* Cor de fundo do cabeçalho */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para dar destaque */
+    border-bottom: 1px solid white; /* Borda inferior branca */
+}
+
+header h1 {
+    margin: 0;
+    color: #FFFFFF;
+}
+
+/* Estilos para o cabeçalho h1 em dispositivos móveis */
+@media screen and (max-width: 767px) {
+    header h1 {
+        font-size: 24px; /* Define o tamanho da fonte para 24px em dispositivos móveis */
+    }
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-left: 20px;
+}
+
+nav li:first-child {
+    margin-left: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #FFFFFF; /* Cor dos links */
+    font-size: 20px;
+}
+nav a:hover{
+    color: #B81818;
+}
+
+/* Estilos para o ícone do menu */
+.menu-icon {
+    display: none; /* Inicia oculto */
+    color: #FFFFFF;
+}
+.menu-icon:hover {
+    color: #B81818; /* Cor de destaque ao passar o mouse */
+  }
+
+
+/* Estilos para o menu clicável em telas menores */
+@media (max-width: 767px) {
+    nav {
+        display: none;
+        position: fixed;
+        top: 60px; /* Altura do cabeçalho */
+        right: 0;
+        background-color: #000000; /* Cor de fundo do menu */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para dar destaque */
+        padding: 20px;
+        width: 200px; /* Largura do menu */
+        z-index: 999; /* Garante que o menu fique sobre o conteúdo */
+    }
+    nav.open {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+    .menu-icon {
+        display: block; /* Torna visível apenas em telas menores */
+    }
+}
+
+/* Estilo responsivo para iPads */
+@media (min-width: 768px) and (max-width: 1024px) {
+    header h1 {
+        font-size: 36px; /* Aumenta o tamanho da fonte para iPads */
+    }
+
+    nav {
+        display: none;
+        position: fixed;
+        top: 60px; /* Altura do cabeçalho */
+        right: 0;
+        background-color: #000000; /* Cor de fundo do menu */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para dar destaque */
+        padding: 20px;
+        width: 250px; /* Aumenta a largura do menu para iPads */
+        z-index: 999; /* Garante que o menu fique sobre o conteúdo */
+    }
+
+    nav.open {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    nav a {
+        font-size: 30px; /* Aumenta o tamanho dos links no cabeçalho */
+    }
+
+    .menu-icon {
+        display: block; /* Torna visível em iPads */
+        font-size: 32px; /* Aumenta o tamanho do ícone para iPads */
+    }  
+}
+
+/* Estilo para o texto selecionado */
+nav ul li.selecionado a {
+    color: #B81818; /* Altera a cor do texto */
+}
+
+/* Cardápio */
+
+.cardapio {
+    display: flex;
+    flex-direction: column; /* Coloca os elementos um abaixo do outro */
+    align-items: center; /* Centraliza horizontalmente os itens da seção menu-description */
+    width: 100%;
+    
+}
+
+/* Menu Description */
+
+.menu-description {
+    text-align: center; /* Centraliza o texto na tela */
+    margin-bottom: 20px;
+    max-width: 80%; /* Define a largura máxima para evitar o overflow */
+    margin: 0 auto; /* Centraliza horizontalmente a section */
+}
+
+/* Estilo para o h1 dentro de menu-description */
+.menu-description h1 {
+    font-size: 45px; /* Tamanho de fonte maior */
+}
+
+/* Itens do Menu */
+
+.menu-itens {
+    width: 100%;
+}
+
+.menu-itens > div {
+    margin-bottom: 20px;
+}
+
+.menu-itens h2 {
+    text-align: center; /* Centraliza os h2 */
+    margin-bottom: 10px;
+}
+
+.menu-item {
+    background-color: #B81818;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+.menu-item img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover; /* Mantém a proporção da imagem */
+}
+
+.menu-item h3 {
+    margin: 10px 0;
+
+}
+
+.appetizers-item, .maincourses-item, .desserts-item, .drinks-item {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Faz com que os itens que não cabem na linha quebrem para a próxima linha */
+}
+
+/* Cardapio Estilos para dispositivos móveis */
+
+@media screen and (max-width: 600px) {
+    .menu-description h1 {
+        font-size: 24px;
+    }
+    .menu-item img {
+        width: 150px; /* Reduz o tamanho da imagem para 100px em dispositivos móveis */
+        height: 150px;
+    }
+
+    .menu-item h3 {
+        font-size: 16px; /* Reduz o tamanho da fonte de h3 para 16px em dispositivos móveis */
+    }
+}
+
+/* Estilos para a área de login */
+.login, .register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Estilo específico para a div .perfil */
+.perfil {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #1d1d1d;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centraliza o texto e os botões na seção */
+    width: 90%;
+    position: relative; /* Torna o posicionamento relativo para ajustar o top */
+    top: -95vh; /* Ajusta a posição superior para que suba na tela */
+}
+
+.login-area, .register-area, .perfil{
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #1d1d1d;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centraliza o texto e os botões na seção */
+    width: 90%;
+}
+
+/* Estilo para largura máxima em telas maiores */
+@media (min-width: 768px) {
+    .login-area, .register-area, .perfil{
+        width: 50%;
+    }
+}
+
+.login-area h1, .register-area h1, .perfil h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center; /* Centraliza o h1 na seção */
+}
+
+.login-area h2, .register-area h2, .perfil h2 {
+    margin: 10px 0;
+    margin-left: 20px;
+    font-size: 18px;
+    text-align: left; /* Mantem a esquerda os h2 na seção */
+}
+
+.login-area input, .register-area input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.login-area button, .register-area button, .perfil button {
+    width: 30%;
+    padding: 10px;
+    background-color: #B81818;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto; /* Centraliza o botão na seção */
+}
+
+.login-area button:hover, .register-area button:hover, .perfil button:hover {
+    background-color: #A01515;
+}
+
+/* Edição de Cardapio */
+
+.editar-cardapio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+.editar-cardapio img {
+    width: 30%;
+    height: 30%;
+}
+
+.editar-cardapio h1 {
+    text-align: center; /* Centraliza o título */
+    font-size: 45px; /* Define o tamanho da fonte */
+    margin-bottom: 20px; /* Adiciona um espaço abaixo do título */
+}
+
+.menu-sections {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.menu-sections > div {
+    margin-bottom: 20px;
+}
+
+.edit-item {
+    background-color: #1d1d1d;
+    padding: 10px;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-item input {
+    margin: 5px 0;
+    padding: 5px;
+}
+
+.edit-item button {
+    margin-top: 10px;
+    background-color: #A01515;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Estilo específico para o botão de editar conteúdo */
+#editContentButton {
+    width: 30%;
+    padding: 10px;
+    background-color: #B81818;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto; /* Centraliza o botão na seção */
+}
+
+#editContentButton:hover {
+    background-color: #A01515;
+}
+
+/* Estilo para os botões "Adicionar" */
+.menu-sections button {
+    padding: 10px; /* Ajusta o padding dos botões */
+    font-size: 16px; /* Ajusta o tamanho da fonte dos botões */
+    background-color: #A01515; /* Cor de fundo */
+    color: #FFFFFF; /* Cor do texto */
+    border: none; /* Remove a borda */
+    border-radius: 3px; /* Borda arredondada */
+    cursor: pointer; /* Cursor de ponteiro */
+    margin-top: 10px; /* Espaço acima do botão */
+}
+
+.menu-sections button:hover {
+    background-color: #B81818; /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilo para os botões "Salvar Alterações" e "Cancelar" */
+.editar-cardapio button {
+    padding: 10px; /* Ajusta o padding dos botões */
+    font-size: 16px; /* Ajusta o tamanho da fonte dos botões */
+    background-color: #A01515; /* Cor de fundo */
+    color: #FFFFFF; /* Cor do texto */
+    border: none; /* Remove a borda */
+    border-radius: 3px; /* Borda arredondada */
+    cursor: pointer; /* Cursor de ponteiro */
+    margin: 10px; /* Espaço em volta dos botões */
+}
+
+.editar-cardapio button:hover {
+    background-color: #B81818; /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilo responsivo para iPads */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .menu-sections {
+        width: 90%; /* Ajusta a largura para iPads */
+    }
+    .editar-cardapio img {
+        width: 70%;
+        height: 70%;
+        object-fit: cover;
+    }
+    .edit-item input {
+        padding: 10px; /* Aumenta o padding dos inputs */
+        font-size: 18px; /* Aumenta o tamanho da fonte dos inputs */
+    }
+
+    .edit-item button {
+        padding: 15px; /* Aumenta o padding dos botões */
+        font-size: 18px; /* Aumenta o tamanho da fonte dos botões */
+    }
+    /* Estilo para os botões "Adicionar" */
+    .menu-sections button {
+        padding: 15px; /* Aumenta o padding dos botões */
+        font-size: 18px; /* Aumenta o tamanho da fonte dos botões */
+        background-color: #A01515; /* Cor de fundo */
+        color: #FFFFFF; /* Cor do texto */
+        border: none; /* Remove a borda */
+        border-radius: 3px; /* Borda arredondada */
+        cursor: pointer; /* Cursor de ponteiro */
+        margin-top: 10px; /* Espaço acima do botão */
+    }
+
+    .menu-sections button:hover {
+        background-color: #B81818; /* Cor de fundo ao passar o mouse */
+    }
+    /* Estilo para os botões "Salvar Alterações" e "Cancelar" */
+    .editar-cardapio button {
+        padding: 15px; /* Aumenta o padding dos botões */
+        font-size: 18px; /* Aumenta o tamanho da fonte dos botões */
+        background-color: #A01515; /* Cor de fundo */
+        color: #FFFFFF; /* Cor do texto */
+        border: none; /* Remove a borda */
+        border-radius: 3px; /* Borda arredondada */
+        cursor: pointer; /* Cursor de ponteiro */
+        margin: 10px; /* Espaço em volta dos botões */
+    }
+
+    .editar-cardapio button:hover {
+        background-color: #B81818; /* Cor de fundo ao passar o mouse */
+    }
+
+    /* Estilo para a div .perfil */
+    .perfil {
+        width: 80%; /* Aumenta a largura do perfil */
+        padding: 20px; /* Adiciona padding */
+        font-size: 20px; /* Aumenta o tamanho da fonte */
+    }
+    .perfil h1 {
+        font-size: 35px; /* Aumenta o tamanho da fonte do h1 */
+    }
+
+    .perfil h2 {
+        font-size: 30px; /* Aumenta o tamanho da fonte dos h2 */
+    }
+
+    .perfil button {
+        padding: 15px; /* Aumenta o padding do botão */
+        font-size: 18px; /* Aumenta o tamanho da fonte do botão */
+        margin-top: 5%;
+    }
+}
+
+/* Review */
+
+.star {
+    cursor: pointer;
+    font-size: 2em;
+}
+
+.rating-container {
+    display: flex;
+    gap: 5px;
+}
+
+.reviews {
+    margin: 0 auto; /* Centraliza o item na tela */
+    width: 90%; /* Adiciona uma largura para centralização */
+    max-width: 1200px; /* Define uma largura máxima */
+}
+/* Estilizando o h1 */
+.reviews h1 {
+    text-align: center;
+    font-size: 45px;
+}
+.reviews-itens {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Espaço entre os reviews */
+    padding-top: 30px;
+}
+.review-item {
+    width: 100%;
+}
+.review-left-section {
+    margin-right: 5%;
+    float: left;
+}
+.review-left-section img{
+    width: 350px;
+    height: 250px;
+    object-fit: cover;
+}
+.review-rating {
+    font-size: 25px;
+}
+.review-title {
+    font-size: 22px;
+}
+.review-postby {
+    font-size: 20px;
+    font-style: italic;
+}
+/* Estilo específico para o botão de editar conteúdo */
+#addReviewButton, #editReviewButton {
+    width: 20%;
+    padding: 10px;
+    background-color: #B81818;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto; /* Centraliza o botão na seção */
+}
+
+#addReviewButton:hover, #editReviewButton:hover {
+    background-color: #A01515;
+}
+
+/* Estilo responsivo para dispositivos móveis */
+@media (max-width: 767px) {
+    #addReviewButton, #editReviewButton {
+        width: 80%; /* Aumenta a largura para 80% em telas menores */
+        font-size: 16px; /* Ajusta o tamanho da fonte para melhor legibilidade */
+    }
+    .reviews h1 {
+        font-size: 24px;
+    }
+    .reviews h3 {
+        font-size: 16px;
+    }
+    .review-postby {
+        font-size: 14px;
+        font-style: italic;
+    }
+    .menu-description {
+        max-width: 90%; /* Define a largura máxima para evitar o overflow */
+    }
+    .menu-description p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    #addReviewButton, #editReviewButton {
+        width: 90%; /* Aumenta a largura para 90% em telas muito pequenas */
+        font-size: 14px; /* Ajusta o tamanho da fonte para melhor legibilidade */
+        padding: 12px; /* Ajusta o padding para mais espaço interno */
+    }
+}
+
+/* Estilo para a adição do review*/
+
+.review-form {
+    max-width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #1d1d1d;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.review-form input[type="text"],
+.review-form textarea {
+    width: 98%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background-color: #2b2b2b;
+    color: #FFFFFF;
+}
+
+.review-form button {
+    padding: 10px 20px;
+    background-color: #B81818;
+    color: #FFF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.review-form button:hover {
+    background-color: #A01515;
+}
+
+/* Página inicial */
+
+.pagina-inicial {
+    text-align: center;
+    width: 100%;
+    margin-top: 70px;
+}
+
+.welcome-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcome-text h1 {
+    font-size: 60px;
+    margin-bottom: 60px;
+}
+
+.welcome-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 200px;
+    max-width: 1200px; /* Define uma largura máxima para o conteúdo */
+    margin: 0 auto; /* Centraliza o conteúdo horizontalmente */
+}
+
+.welcome-text {
+    flex: 1;
+    text-align: left;
+}
+
+.welcome-text h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.welcome-text ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.welcome-text li {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.welcome-slider {
+    flex: 2;
+    text-align: left;
+    max-width: 600px; /* Define uma largura máxima para a imagem do slider */
+}
+
+.welcome-slider img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.welcome-slider p {
+    font-size: 20px;
+    text-align: center;
+}
+
+.menu-button {
+    display: block; /* Torna o botão um bloco */
+    padding: 10px 20px;
+    background-color: #B81818;
+    color: #FFF;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 20px auto 0 auto; /* Adiciona margens superior e centraliza horizontalmente */
+    margin-top: 50px;
+}
+
+.menu-button:hover {
+    background-color: #A01515;
+}
+
+/* Estilos responsivos para dispositivos móveis */
+@media (max-width: 767px) {
+    .welcome-section h1 {
+        font-size: 36px;
+    }
+
+    .welcome-text h2 {
+        font-size: 24px;
+    }
+
+    .welcome-slider p {
+        font-size: 14px;
+    }
+
+    .welcome-text, .welcome-slider, .welcome-images {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .welcome-text ul {
+        padding-left: 0;
+    }
+
+    .welcome-images img {
+        max-width: 150px;
+        max-height: 150px;
+    }
+
+    .welcome-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .menu-button {
+        font-size: 16px;
+        padding: 10px 15px;
+        margin: 20px auto 0 auto;
+        margin-bottom: 20px;
+        margin-top: 30px;
+    }
+}
+
+/* Estilos responsivos para iPads */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .pagina-inicial {
+        margin-top: 70px;
+    }
+    .welcome-section h1 {
+        font-size: 40px;
+    }
+
+    .welcome-text h2 {
+        font-size: 30px;
+    }
+
+    .welcome-slider p {
+        font-size: 25px;
+    }
+
+    .welcome-images img {
+        max-width: 200px;
+        max-height: 200px;
+    }
+    .welcome-text li {
+        font-size: 26px;
+    }
+
+    .welcome-content {
+        flex-direction: column;
+        gap: 60px; /* Aumenta o gap entre as divs */
+        max-width: 80%;
+    }
+
+    .welcome-text, .welcome-slider, .welcome-images {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .menu-button {
+        font-size: 18px;
+        padding: 12px 20px;
+        margin: 20px auto 0 auto;
+        margin-top: 50px;
+    }
+    .login-area, .register-area {
+        width: 90%;
+    }
+    .menu-description {
+        max-width: 90%; /* Define a largura máxima para evitar o overflow */
+    }
+    .menu-description p {
+        font-size: 20px;
+    }
+    .appetizers h2,
+    .maincourses h2,
+    .desserts h2,
+    .drinks h2 {
+        font-size: 30px; /* Ajuste o tamanho da fonte conforme necessário */
+    }
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SushiFusion - Restaurante Japonês</title>
+    <link rel="icon" href="/Images/icon_two.png">
+    <link rel="stylesheet" href="style.css"> <!-- Arquivo CSS-->
+</head>
+<body>
+   <!-- Cabeçalho -->
+    <header>
+        <h1>SushiFusion - Restaurante Japonês</h1>
+            <div class="menu-icon">&#9776;</div> <!-- Ícone de menu -->
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="mostrarPagina('pagina-inicial')">Página Inicial</a></li>
+                    <li><a href="#" onclick="mostrarPagina('cardapio')">Cardápio</a></li>
+                    <li><a href="#" onclick="mostrarPagina('reviews')">Avaliações</a></li>
+                    <li><a href="#" onclick="mostrarPagina('login')">Login</a></li> 
+                </ul>
+            </nav>
+    </header>
+    <main>
+        <!-- Pagina Inicial -->
+        <div class="pagina-inicial">
+            <section class="welcome-section">
+                <div class="welcome-content">
+                    <div class="welcome-text">
+                        <h1>BEM-VINDOS</h1>
+                        <h2>Horário de funcionamento:</h2>
+                        <ul>
+                            <li>Seg a Sex: 11h30 às 15h e das 18h30 às 23h</li>
+                            <li>Sábado: 12h às 23h</li>
+                            <li>Domingos e Feriados: 12h às 22h</li>
+                        </ul>
+                        <h2>Contato:</h2>
+                        <ul>
+                            <li>(31)3516-6600</li>
+                            <li>restaurante@sushifusion.com</li>
+                        </ul>
+                        <button class="menu-button" onclick="mostrarPagina('cardapio')">Ver Cardápio</button>
+                    </div>
+                    <div class="welcome-slider">
+                        <img src="https://images.squarespace-cdn.com/content/v1/63fc9d916fb0b31ab06c0ead/34ff468e-3358-4e3f-ac4d-9d9b717e29bb/restaurante-japones-morumbi.jpg" alt="Imagem do Restaurante">
+                        <p>
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Cardápio -->
+        <div class="cardapio" style="display: none;">
+            <section class="menu-description">
+                <h1>Cardápio</h1>
+                <p class="menu-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </section>
+            <section class="menu-itens">
+                <div class="appetizers">
+                    <h2>Entradas</h2>
+                    <div class="appetizers-item">
+                        
+                    </div>
+                </div>
+                <div class="maincourses">
+                    <h2>Pratos Principais</h2>
+                    <div class="maincourses-item">
+
+                    </div>
+                </div>
+                <div class="desserts">
+                    <h2>Sobremesas</h2>
+                    <div class="desserts-item">
+
+                    </div>
+                </div>
+                <div class="drinks">
+                    <h2>Bebidas</h2>
+                    <div class="drinks-item">
+
+                    </div>
+                </div>
+            </section>
+            <button type="button" id="editContentButton" style="display: none;" onclick="mostrarPagina('editar-cardapio')">Editar Conteúdo</button>
+        </div>
+
+        <!-- Editar Cardápio -->
+        <div class="editar-cardapio" style="display: none;">
+            <h1>Editar Cardápio</h1>
+            <div class="menu-sections">
+                <div class="appetizers-edit">
+                    <h2>Entradas</h2>
+                    <div class="appetizers-edit-item"></div>
+                    <button type="button" onclick="addNewItem('appetizers')">Adicionar Entrada</button>
+                </div>
+                <div class="maincourses-edit">
+                    <h2>Pratos Principais</h2>
+                    <div class="maincourses-edit-item"></div>
+                    <button type="button" onclick="addNewItem('maincourses')">Adicionar Prato Principal</button>
+                </div>
+                <div class="desserts-edit">
+                    <h2>Sobremesas</h2>
+                    <div class="desserts-edit-item"></div>
+                    <button type="button" onclick="addNewItem('desserts')">Adicionar Sobremesa</button>
+                </div>
+                <div class="drinks-edit">
+                    <h2>Bebidas</h2>
+                    <div class="drinks-edit-item"></div>
+                    <button type="button" onclick="addNewItem('drinks')">Adicionar Bebida</button>
+                </div>
+            </div>
+            <button type="button" onclick="salvarAlteracoes()">Salvar Alterações</button>
+            <button type="button" onclick="ocultarEditarCardapio()">Cancelar</button>
+        </div>
+
+        <!-- Reviews -->
+        <div class="reviews" style="display: none;">
+            <h1>Avaliações</h1>
+            <div class="reviews-itens">
+                <!-- Aqui serão listados os reviews -->
+            </div>
+            <button type="button" id="addReviewButton" style="display: none;" onclick="mostrarFormularioReview()">Fazer um Review</button>
+            <button type="button" id="editReviewButton" style="display: none;" onclick="mostrarFormularioReview(true)">Editar seu Review</button>
+        </div>
+
+        <!-- Login -->
+        <div class="login" style="display: none;">
+            <section class="login-area">
+                <h1>Login</h1>
+                <h2>E-mail</h2>
+                <input type="email" id="login-email" placeholder="Insira seu e-mail">
+                <h2>Senha</h2>
+                <input type="password" id="login-password" placeholder="Insira sua senha">
+                <button type="button" onclick="login()">Entrar</button>
+            </section>
+        
+            <section class="register-area">
+                <h1>Cadastro</h1>
+                <h2>Digite seu e-mail</h2>
+                <input type="email" id="register-email" name="email" placeholder="Insira seu e-mail">
+                <h2>Digite seu usuário</h2>
+                <input type="text" id="register-username" name="username" placeholder="Insira um usuário">
+                <h2>Digite uma Senha</h2>
+                <input type="password" id="register-password" name="password" placeholder="Insira sua senha"> <br>
+                <small>A senha deve ter pelo menos 8 caracteres, incluindo uma letra maiúscula, uma letra minúscula, um número e um caractere especial.</small>
+                <h2>Digite novamente a senha</h2>
+                <input type="password" id="register-confirm-password" name="confirmPassword" placeholder="Insira sua senha novamente">
+                <button type="button">Criar</button>
+            </section>
+        </div>
+
+        <!-- Perfil -->
+        <div class="perfil" id="perfil" display: none;">
+            <h1>Perfil</h1>
+            <h2>Nome de usuário: <span id="profile-username"></span></h2>
+            <h2>Usuário é: <span id="profile-role"></span></h2>
+            <h2>E-mail: <span id="profile-email"></span></h2>
+            <button type="button" onclick="logout()">Deslogar</button>
+        </div>
+
+    </main>
+    <script src="script.js"></script> <!-- Arquivo JS-->
+</body>
+</html>
