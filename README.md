@@ -6,9 +6,9 @@
 <h2>(˵ •̀ ᴗ - ˵ ) ✧Project Concept on Canva</h2>
 <p>I created the entire website layout in Canva.</p>
 <img src="Restaurante/front-end/Images/pagina-inicial.png">
-<img src="Images/cardapio.png">
-<img src="Images/review.png">
-<img src="Images/login-cadastro.png">
+<img src="Restaurante/front-end/Images/cardapio.png">
+<img src="Restaurante/front-end/Images/review.png">
+<img src="Restaurante/front-end/Images/login-cadastro.png">
 <h2>ฅ՞•ﻌ•՞ฅ Features</h2>
 <p>I have created some features for the website: a login and registration system for new users (with role identification), menu editing (employees can add, edit, or remove items from the menu), and review creation (customers can write and edit reviews - they are unique per registration). .</p>
 <h2>/ᐠ - ˕ -マ How to access the project</h2>
