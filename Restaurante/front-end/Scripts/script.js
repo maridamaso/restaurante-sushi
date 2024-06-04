@@ -1,3 +1,4 @@
+const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:3000';
 //Header
 // Variável global para controlar o estado de login do usuário
 let isLoggedIn = false;
@@ -12,7 +13,7 @@ function verificarRoleUsuario() {
     }
 
     if (user && user.role === 'Cliente') {
-        fetch(`http://localhost:3000/reviews?username=${user.username}`)
+        fetch(`${apiUrl}/reviews?username=${user.username}`)
             .then(response => response.json())
             .then(data => {
                 if (data.length > 0) {
@@ -82,7 +83,7 @@ function fillMenuSection(sectionClass, items) {
 }
 
 // Fazer requisição ao backend para obter os dados do cardápio
-fetch('http://localhost:3000/menu')
+fetch('${apiUrl}/menu')
 .then(response => response.json())
 .then(data => {
     // Preencher as seções do menu com os dados recebidos
@@ -221,7 +222,7 @@ function salvarAlteracoes() {
     
     console.log('Dados atualizados para envio:', updatedMenuData); // Log dos dados a serem enviados
 
-    fetch('http://localhost:3000/menu', {
+    fetch('${apiUrl}/menu', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -240,7 +241,7 @@ function salvarAlteracoes() {
 
 // Função para atualizar a página de cardápio com as novas alterações
 function atualizarCardapio() {
-    fetch('http://localhost:3000/menu')
+    fetch('${apiUrl}/menu')
     .then(response => response.json())
     .then(data => {
         document.querySelector('.appetizers-item').innerHTML = '';
@@ -339,7 +340,7 @@ function mostrarPagina(pagina) {
 }
 
 function carregarItensParaEdicao() {
-    fetch('http://localhost:3000/menu')
+    fetch('${apiUrl}/menu')
     .then(response => response.json())
     .then(data => {
         preencherSecaoEdicao('appetizers', data.appetizers);
@@ -541,7 +542,7 @@ function login() {
     const email = document.getElementById('login-email').value;
     const password = document.getElementById('login-password').value;
 
-    fetch('http://localhost:3000/login', {
+    fetch('${apiUrl}/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
@@ -659,7 +660,7 @@ function register() {
         return;
     }
 
-    fetch('http://localhost:3000/register', {
+    fetch('${apiUrl}/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, username, password, confirmPassword })
@@ -792,7 +793,7 @@ function mostrarFormularioReview(isEdit = false, reviewData = {}) {
 
 // Função para editar um review
 function editarReview(review) {
-    fetch('http://localhost:3000/reviews', {
+    fetch('${apiUrl}/reviews', {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -809,7 +810,7 @@ function editarReview(review) {
 
 // Função para salvar um review
 function salvarReview(review) {
-    fetch('http://localhost:3000/reviews', {
+    fetch('${apiUrl}/reviews', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -828,7 +829,7 @@ function salvarReview(review) {
 
 // Função para carregar os reviews
 function carregarReviews() {
-    fetch('http://localhost:3000/reviews')
+    fetch('${apiUrl}/reviews')
     .then(response => response.json())
     .then(data => {
         const reviewsContainer = document.querySelector('.reviews-itens');
