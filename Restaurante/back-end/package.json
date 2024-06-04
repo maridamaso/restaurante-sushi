@@ -1,10 +1,9 @@
 {
   "name": "restaurante-tcc",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "Restaurante/back-end/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node Restaurante/back-end/server.js"
   },
   "keywords": [],
   "author": "",
