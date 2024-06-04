@@ -9,7 +9,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(cors({
-    origin: 'https://meek-elf-c2302f.netlify.app', // Substitua pelo domínio do seu Netlify
+    origin: 'https://meek-elf-c2302f.netlify.app', 
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true
 }));
