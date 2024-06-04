@@ -12,4 +12,4 @@
 <h2>ฅ՞•ﻌ•՞ฅ Features</h2>
 <p>I have created some features for the website: a login and registration system for new users (with role identification), menu editing (employees can add, edit, or remove items from the menu), and review creation (customers can write and edit reviews - they are unique per registration). .</p>
 <h2>/ᐠ - ˕ -マ How to access the project</h2>
-<a href="">Click here to access</a>
+<a href="https://665e61ebbcfaf882a1f94330--meek-elf-c2302f.netlify.app/#">Click here to access</a>
