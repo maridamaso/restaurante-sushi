@@ -1,8 +1,5 @@
-//const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:3000';
-
 // URL do back-end
-const backendURL =
-    "https://e787f3cd-0135-4fbd-b0dc-26db23a58153-00-jsvop1o47ws6.worf.replit.dev";
+const backendURL = process.env.REACT_APP_BACKEND_URL;
 
 //Header
 // Variável global para controlar o estado de login do usuário
