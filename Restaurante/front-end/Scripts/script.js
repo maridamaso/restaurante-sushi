@@ -1,4 +1,8 @@
-const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:3000';
+//const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:3000';
+
+// URL do back-end
+const backendURL = 'https://18bdfc01-208c-419a-b83b-1aa45e2161a6-00-xnwb2u0j0zgo.picard.replit.dev';
+
 //Header
 // Variável global para controlar o estado de login do usuário
 let isLoggedIn = false;
@@ -13,7 +17,7 @@ function verificarRoleUsuario() {
     }
 
     if (user && user.role === 'Cliente') {
-        fetch(`${apiUrl}/reviews?username=${user.username}`)
+        fetch(`${backendURL}/reviews?username=${user.username}`)
             .then(response => response.json())
             .then(data => {
                 if (data.length > 0) {
@@ -83,7 +87,7 @@ function fillMenuSection(sectionClass, items) {
 }
 
 // Fazer requisição ao backend para obter os dados do cardápio
-fetch('${apiUrl}/menu')
+fetch('${backendURL}/menu')
 .then(response => response.json())
 .then(data => {
     // Preencher as seções do menu com os dados recebidos
@@ -222,7 +226,7 @@ function salvarAlteracoes() {
     
     console.log('Dados atualizados para envio:', updatedMenuData); // Log dos dados a serem enviados
 
-    fetch('${apiUrl}/menu', {
+    fetch('${backendURL}/menu', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -241,7 +245,7 @@ function salvarAlteracoes() {
 
 // Função para atualizar a página de cardápio com as novas alterações
 function atualizarCardapio() {
-    fetch('${apiUrl}/menu')
+    fetch('${backendURL}/menu')
     .then(response => response.json())
     .then(data => {
         document.querySelector('.appetizers-item').innerHTML = '';
@@ -340,7 +344,7 @@ function mostrarPagina(pagina) {
 }
 
 function carregarItensParaEdicao() {
-    fetch('${apiUrl}/menu')
+    fetch('${backendURL}/menu')
     .then(response => response.json())
     .then(data => {
         preencherSecaoEdicao('appetizers', data.appetizers);
@@ -542,7 +546,7 @@ function login() {
     const email = document.getElementById('login-email').value;
     const password = document.getElementById('login-password').value;
 
-    fetch('${apiUrl}/login', {
+    fetch('${backendURL}/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
@@ -660,7 +664,7 @@ function register() {
         return;
     }
 
-    fetch('${apiUrl}/register', {
+    fetch('${backendURL}/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, username, password, confirmPassword })
@@ -793,7 +797,7 @@ function mostrarFormularioReview(isEdit = false, reviewData = {}) {
 
 // Função para editar um review
 function editarReview(review) {
-    fetch('${apiUrl}/reviews', {
+    fetch('${backendURL}/reviews', {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -810,7 +814,7 @@ function editarReview(review) {
 
 // Função para salvar um review
 function salvarReview(review) {
-    fetch('${apiUrl}/reviews', {
+    fetch('${backendURL}/reviews', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -829,7 +833,7 @@ function salvarReview(review) {
 
 // Função para carregar os reviews
 function carregarReviews() {
-    fetch('${apiUrl}/reviews')
+    fetch('${backendURL}/reviews')
     .then(response => response.json())
     .then(data => {
         const reviewsContainer = document.querySelector('.reviews-itens');
