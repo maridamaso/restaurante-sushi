@@ -1,5 +1,5 @@
 // URL do back-end
-const backendURL = process.env.REACT_APP_BACKEND_URL;
+const backendURL = REACT_APP_BACKEND_URL;
 
 //Header
 // Variável global para controlar o estado de login do usuário
