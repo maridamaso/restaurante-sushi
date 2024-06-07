@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "Restaurante/functions/api.js",
   "scripts": {
-    "build": "echo \"No build step required\"",
+    "build": "react-scripts build",
     "start": "node Restaurante/functions/api.js"
   },
   "dependencies": {
